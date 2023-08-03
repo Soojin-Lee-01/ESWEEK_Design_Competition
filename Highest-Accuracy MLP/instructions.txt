@@ -1,0 +1,23 @@
+===================================
+1. model files
+===================================
+There are 2 model files:
+- "HAmlp.tflite" : The highest-accuracy MLP model with non-quantization
+- "HAmlp_float16.tflite" : The highest-accuracy MLP model with float16 quantization
+- "HAmlp_dynamicRange.tflite" : The highest-accuracy MLP model with dynamic range quantization
+- "HAmlp_floatFallback.tflite" : The highest-accuracy MLP model with float fallback quantization
+
+* The input shape of the MLP model is (1, 128).
+===================================
+2. code files
+===================================
+There are 2 code files and to execute each code, you have to set two variables(model_file, test_data_file) in the code:
+- "mlp_eval.py" : Shows accuracy of the model [model_file] on [test_data_file]
+- "mlp_predict.py" : Shows prediction of the model [model_file] on first data in [test_data_file]. Also, time spent on prediction shows up.
+
+===================================
+3. test data file
+===================================
+"test_data_odd_even.csv" is the test set we used.
+It is a subsampling data merged both odd-numbered and even-numberd subsampling datasets.
+It has 129 columns: 32 X-axis data + 32 Y-axis data + 32 Z-axis data + 32 stretch seonsor data + label number
